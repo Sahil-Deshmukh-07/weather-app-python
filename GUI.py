@@ -22,16 +22,13 @@ class WeatherApp:
         root.mainloop()
 
     def on_button_click(self):
-        # print("="*20)
         city = self.input.get()
-        # w.get_weather(city)
         self.result = tk.Label(self.root, text=w.get_weather(city), bg="#070707", fg="white",border=2, relief="solid", padx=10, pady=10,font=("Arial",12,"bold"))
         self.result.pack(pady=30)
         self.input.delete(0, tk.END)
         self.root.bind("<Key>", func=lambda event: self.root.after(100,self.result.destroy()))
 
 
-# app = WeatherApp()
 
 if __name__ == "__main__":
     app = WeatherApp()
